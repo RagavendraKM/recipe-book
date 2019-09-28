@@ -1,0 +1,17 @@
+body{
+    margin-top: 10px;
+    position: absolute;
+    background: #f9f9f9;
+}
+
+.card {
+    margin-bottom: 20px;
+    margin-left: 20rem;
+    margin-top: 10px;
+    width: 40rem;
+}
+
+.navbar {
+    padding-left: -10rem;
+    width :100rem;
+}
