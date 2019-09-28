@@ -2,7 +2,7 @@
 
 Clone the repo
 
-##Installation Instructions
+## Installation Instructions
 
 Enter the command: 
 1) npm install
