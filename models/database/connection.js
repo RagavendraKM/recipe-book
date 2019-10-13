@@ -9,7 +9,7 @@ var client = new Client({
 })
 
 function connectToDb() {
-    var db = "postgres://root:root@localhost/recipe";
+    var db = process.env.DATABASE_URL;
 
     return client.connect();
 }
