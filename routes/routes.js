@@ -6,9 +6,11 @@ var { selectAll, insert } = require('../models/database/recipe/query');
 var router = express.Router();
 
 router.get('/', async (req, res) => {
+    
     try {
-        let result = await selectAll();
-        res.render("index", { recipes: result });
+        //let result = await selectAll();
+     //   res.render("index", { recipes: result });
+        res.send("Hi");
     } catch (e) {
         console.log(e)
     }/* 
