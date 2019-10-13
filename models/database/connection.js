@@ -5,7 +5,6 @@ var client = new Client({
 })
 
 function connectToDb() {
-
     return client.connect();
 }
 

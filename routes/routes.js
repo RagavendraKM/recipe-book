@@ -6,9 +6,10 @@ var { selectAll, insert } = require('../models/database/recipe/query');
 var router = express.Router();
 
 router.get('/', async (req, res) => {
+    
     try {
         let result = await selectAll();
-        res.render("index", { recipes: result });
+       res.render("index", { recipes: result });
     } catch (e) {
         console.log(e)
     }/* 
