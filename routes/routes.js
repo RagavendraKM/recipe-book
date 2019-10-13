@@ -48,4 +48,21 @@ router.post('/edit', (req, res) => {
         .catch(err => console.log(err))
 });
 
+router.get('/createTables', (req, res) => {
+    client.query(`CREATE TABLE public.recipes
+    (
+        id character varying,
+        rname character varying,
+        r_ingredients character varying,
+        r_steps character varying,
+        PRIMARY KEY (id)
+    )`).then(result => {
+        console.log(result);
+        res.send(result);
+    }).catch(e => {
+        console.log(e);
+        res.send(e);
+    })
+});
+
 module.exports = router;

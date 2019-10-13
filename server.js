@@ -7,14 +7,20 @@ const { pg, Pool, Client } = require('pg');
 const path = require('path');
 const bodyParser = require('body-parser');
 const dust = require('dustjs-helpers');
+const config = require('./config.json');
 
 var app = express();
+
+if(!process.env.NODE_RUNTIME) {
+    process.env = { ...process.env,...config }
+    console.log(process.env.DATABASE_URL);
+}
 
 connectToDb().then(() => {
     // Client is now connected
     console.log("Database connected");
 }).catch((err) => {
-    console.error('Error connecyting: %s', err);
+    console.error('Error connecting: %s', err);
 });
 
 
@@ -33,6 +39,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', router);
+
 
 app.listen(3000, () => {
     console.log(`Server started on 3000`);

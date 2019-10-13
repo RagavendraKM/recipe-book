@@ -21,9 +21,12 @@ async function selectAll() {
 
 async function insert(id, name, ingredients, steps) {
     try {
-        await client.query(queries.insert, [id, name, ingredients, steps]);
+        console.log("Hi");
+        var que = await client.query(queries.insert, [id, name, ingredients, steps]);
+        console.log(que);
         return;
     } catch (e) {
+        console.log(e);
         return e;
     }
 
