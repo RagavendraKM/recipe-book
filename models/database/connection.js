@@ -1,11 +1,12 @@
 const { Client } = require('pg');
 
 var client = new Client({
-    user: "admin",
-    password: "admin",
-    database: "recipe",
-    host: "localhost",
-    port: 5432
+//     user: "admin",
+//     password: "admin",
+//     database: "recipe",
+//     host: "localhost",
+//     port: 5432
+    connectionString : process.env.DATABASE_URL + "?ssl=true"
 })
 
 function connectToDb() {
